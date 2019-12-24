@@ -3,6 +3,14 @@
 A KeystoneJS App to serve [Sapper](https://github.com/sveltejs/sapper) 
 development framework.
 
+## Installation
+
+Using npm:
+
+```
+npm i keystone-app-sapper
+```
+
 ## Usage
 
 `index.js`
