@@ -1,0 +1,22 @@
+{
+  "name": "keystone-sapper-app",
+  "version": "0.1.0",
+  "description": "KeystoneJS Sapper App",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "repository": "https://github.com/otociulis/keystone-sapper-app.git",
+  "author": "Oto Ciulis <oto.ciulis@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {
+    "ora": "^4.0.3",
+    "sapper": "^0.27.9"
+  },
+  "devDependencies": {
+    "@types/node": "^13.1.0",
+    "svelte": "^3.16.6",
+    "typescript": "^3.7.4"
+  }
+}
