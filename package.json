@@ -1,5 +1,5 @@
 {
-  "name": "keystone-sapper-app",
+  "name": "keystone-app-sapper",
   "version": "0.1.0",
   "description": "KeystoneJS Sapper App",
   "main": "dist/index.js",
