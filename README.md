@@ -1,3 +1,5 @@
+[![npm version](https://badge.fury.io/js/keystone-app-sapper.svg)](https://badge.fury.io/js/keystone-app-sapper)
+
 # KeystoneJS Sapper App
 
 A KeystoneJS App to serve [Sapper](https://github.com/sveltejs/sapper) 
