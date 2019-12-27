@@ -3,11 +3,11 @@ import * as ora from "ora";
 
 interface SapperBuildOptions {
   cwd: string;
-  src?: string,
-  routes?: string,
-  output?: string,
-  static?: string,
-  dest?: string,
+  src?: string;
+  routes?: string;
+  output?: string;
+  static?: string;
+  dest?: string;
 }
 
 interface Options {
@@ -36,9 +36,9 @@ export class SapperApp {
 
   constructor(options: Options) {
     const { buildOptions } = options || {};
-    this._options = {
-      ...(options || {}),
+    this._options = {      
       ...this._options,
+      ...(options || {}),
       buildOptions: {
         ...this._options.buildOptions,
         ...buildOptions
@@ -49,15 +49,17 @@ export class SapperApp {
   async prepareMiddleware(args: PrepareMiddlewareArguments) {
     const { dev, distDir } = args;
 
-    const dir = dev ? `${this._options.path}` : distDir;
-    if (dev && !this._options.skipDevelopmentBuild) {
-      const spinner = ora().start("Building Sapper application");
+    const dir = dev ? this._options.path : distDir;
+    if (dev) {
+      if (!this._options.skipDevelopmentBuild) {
+        const spinner = ora().start("Building Sapper application");
 
-      try {
-        await this.build({ distDir: dir });
-        spinner.succeed();
-      } catch (err) {
-        spinner.fail(err);
+        try {
+          await this.build({ distDir: dir });
+          spinner.succeed();
+        } catch (err) {
+          spinner.fail(err);
+        }
       }
     }
 

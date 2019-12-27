@@ -59,7 +59,7 @@ var SapperApp = (function () {
             }
         };
         var buildOptions = (options || {}).buildOptions;
-        this._options = __assign(__assign(__assign({}, (options || {})), this._options), { buildOptions: __assign(__assign({}, this._options.buildOptions), buildOptions) });
+        this._options = __assign(__assign(__assign({}, this._options), (options || {})), { buildOptions: __assign(__assign({}, this._options.buildOptions), buildOptions) });
     }
     SapperApp.prototype.prepareMiddleware = function (args) {
         return __awaiter(this, void 0, void 0, function () {
@@ -68,8 +68,9 @@ var SapperApp = (function () {
                 switch (_a.label) {
                     case 0:
                         dev = args.dev, distDir = args.distDir;
-                        dir = dev ? "" + this._options.path : distDir;
-                        if (!(dev && !this._options.skipDevelopmentBuild)) return [3, 4];
+                        dir = dev ? this._options.path : distDir;
+                        if (!dev) return [3, 4];
+                        if (!!this._options.skipDevelopmentBuild) return [3, 4];
                         spinner = ora().start("Building Sapper application");
                         _a.label = 1;
                     case 1:
